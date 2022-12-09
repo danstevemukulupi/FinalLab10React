@@ -3,6 +3,14 @@ import { Books} from './books';
 import axios from "axios";
 
 export class Read extends React.Component{
+   constructor(){
+    super();
+    this.componentDidMount = this.componentDidMount.bind(this);
+   }
+
+   
+
+    
 
     componentDidMount() {
         axios.get('http://localhost:4000/api/books')
@@ -28,7 +36,7 @@ export class Read extends React.Component{
 
             <div>
                 <h3>Read component!</h3>
-                <Books books = {this.state.books}></Books>
+                <Books books = {this.state.books} Reload= {this.componentDidMount}></Books>
             </div>
 
         ); 
