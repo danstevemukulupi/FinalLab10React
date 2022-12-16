@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
 const path = require('path');
-app.use(express.static(path.join(__dirname, '../../build')));
+app.use(express.static(path.join(__dirname, '../build')));
 app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
 app.use(cors());
@@ -86,7 +86,7 @@ app.delete('/api/book/:id',(req, res)=> {
 
 // Handle any requests that i dont match the ones above
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'../../build/index.html'));
+    res.sendFile(path.join(__dirname+'/../build/index.html'));
     });
 
 
